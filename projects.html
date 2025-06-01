@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Projects</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/site.css" />
+    <style>
+        p, strong {
+            color: black;
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 0.375rem; /* Bootstrap default rounded */
+        }
+
+        /* Modal Styles */
+        .modal-custom {
+            display: none;
+            position: fixed;
+            z-index: 1050;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content-custom {
+            max-width: 800px;
+            margin: auto;
+            background-color: transparent;
+            border: none;
+        }
+
+        .modal-content-custom img {
+            width: 100%;
+            border-radius: 0.375rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <i class="fas fa-code me-2"></i>MyPortfolio
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i>Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html"><i class="fas fa-user me-1"></i>About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="projects.html"><i class="fas fa-briefcase me-1"></i>Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html"><i class="fas fa-envelope me-1"></i>Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+<section class="container py-5">
+    <h2 class="text-center text-primary fw-bold mb-5">My Projects</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4">
+
+        <!-- Hotel Management Simulator System -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="img/projects/hotel.png" class="card-img-top project-img"
+                     alt="Hotel Management System"
+                     onclick="showImage(this.src)">
+                <div class="card-body">
+                    <h5 class="card-title text-secondary fw-bold">Hotel Management Simulator System</h5>
+                    <p class="card-text">
+                        Capstone project built with <strong>ASP.NET MVC</strong> and <strong>Entity Framework Core</strong>. I was the <strong>Database Manager</strong> and <strong>Programmer</strong> responsible for designing the schema and implementing backend logic.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ACT Library Management System -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="img/projects/library.png" class="card-img-top project-img"
+                     alt="Library Management System"
+                     onclick="showImage(this.src)">
+                <div class="card-body">
+                    <h5 class="card-title text-secondary fw-bold">ACT Library Management System</h5>
+                    <p class="card-text">
+                        A complete system developed using <strong>ASP.NET MVC</strong> and <strong>SQL Server</strong>. I worked as a <strong>Fullstack Developer</strong>, handling both UI and server-side operations for managing books, users, and borrow/return tracking.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Student Uniform Inventory System -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="img/projects/suis.png" class="card-img-top project-img"
+                     alt="Student Uniform Inventory System"
+                     onclick="showImage(this.src)">
+                <div class="card-body">
+                    <h5 class="card-title text-secondary fw-bold">Student Uniform Inventory System</h5>
+                    <p class="card-text">
+                        Developed a system to track student uniforms using <strong>Windows Forms Application</strong> in C#. I was the <strong>Fullstack Developer</strong> responsible for both the frontend and backend.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- GeekTech Blog Site -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="img/projects/geektech.png" class="card-img-top project-img"
+                     alt="GeekTech Blog Site"
+                     onclick="showImage(this.src)">
+                <div class="card-body">
+                    <h5 class="card-title text-secondary fw-bold">GeekTech Blog Site</h5>
+                    <p class="card-text">
+                        Group project created as a blogging platform. Built with <strong>HTML</strong>, <strong>CSS</strong> and <strong>JavaScript</strong>. I served as a <strong>Web Developer</strong> in charge of frontend design and blog post integration.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Xamarin Map App -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="img/projects/map.png" class="card-img-top project-img"
+                     alt="Xamarin Map App"
+                     onclick="showImage(this.src)">
+                <div class="card-body">
+                    <h5 class="card-title text-secondary fw-bold">Mobile Map Application</h5>
+                    <p class="card-text">
+                        A mobile application developed using <strong>Xamarin</strong> that simulates a <strong>Google Maps</strong>-like interface. I built this as a personal activity to learn mobile development and geolocation integration.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<footer class="footer sticky-top">
+    <p class="text-white">&copy; 2025 MyPortfolio. All rights reserved.</p>
+    <p><a href="https://github.com/Squidroll890">Visit my GitHub</a></p>
+</footer>
+<!-- Custom Image Modal -->
+<div id="imagePreviewModal" class="modal-custom">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <div class="modal-content-custom">
+        <img id="previewImage" src="" alt="Project Preview">
+    </div>
+</div>
+
+<script>
+    function showImage(src) {
+        document.getElementById("previewImage").src = src;
+        document.getElementById("imagePreviewModal").style.display = "flex";
+    }
+
+    function closeModal() {
+        document.getElementById("imagePreviewModal").style.display = "none";
+    }
+
+    // Optional: Close modal on click outside the image
+    window.onclick = function(event) {
+        const modal = document.getElementById("imagePreviewModal");
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+ <!-- Bootstrap JS (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
